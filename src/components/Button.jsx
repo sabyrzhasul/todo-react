@@ -1,6 +1,13 @@
-const Button = () => {
+import clsx from 'clsx'
+
+const Button = ({ className = '', type = 'button', children }) => {
   return (
-    <button className="button" type="submit">Add</button>
+    <button
+      className={clsx('button', className)}
+      type={type}
+    >
+      {children}
+    </button>
   )
 }
 

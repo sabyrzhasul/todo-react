@@ -1,17 +1,20 @@
-const Field = () => {
+import clsx from 'clsx'
+
+const Field = ({ className = '', id, label, type = 'text' }) => {
   return (
-    <div className="todo__field field">
+    <div className={clsx('field', className)}>
       <label
         className="field__label"
-        htmlFor="new-task"
+        htmlFor={id}
       >
-        New task
+        {label}
       </label>
       <input
         className="field__input"
-        id="new-task"
+        id={id}
         placeholder=" "
         autoComplete="off"
+        type={type}
       />
     </div>
   )
